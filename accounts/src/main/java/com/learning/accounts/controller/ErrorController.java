@@ -2,8 +2,10 @@ package com.learning.accounts.controller;
 
 import com.learning.accounts.dto.ErrorResponse;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.validation.ValidationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
@@ -19,8 +21,23 @@ public class ErrorController {
         errorResponse.setErrorTime(LocalDateTime.now());
         errorResponse.setErrMsg(exception.getMessage());
         errorResponse.setApiPath(request.getRequestURI());
+        errorResponse.setMethod(request.getMethod());
 
         return ResponseEntity.status(HttpStatus.BAD_REQUEST)
                 .body(errorResponse);
+    }
+
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity<ErrorResponse> handleException(HttpServletRequest request, MethodArgumentNotValidException exception){
+        ErrorResponse errorResponse = new ErrorResponse();
+
+        errorResponse.setErrorTime(LocalDateTime.now());
+        errorResponse.setErrMsg(exception.getBindingResult().getAllErrors().get(0).getDefaultMessage());
+        errorResponse.setApiPath(request.getRequestURI());
+        errorResponse.setMethod(request.getMethod());
+
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                .body(errorResponse);
+
     }
 }

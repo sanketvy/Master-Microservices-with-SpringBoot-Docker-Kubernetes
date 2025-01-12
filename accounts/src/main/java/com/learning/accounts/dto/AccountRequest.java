@@ -1,13 +1,22 @@
 package com.learning.accounts.dto;
 
 import com.learning.accounts.entity.Account;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 
 public class AccountRequest {
 
     private String name;
 
+    @NotEmpty(message = "Email address cannot be empty")
+    @Email(message = "Please enter valid email")
     private String email;
 
+    @NotEmpty(message = "Branch code is mandatory")
+    @NotNull(message = "Branch code is mandatory")
+    @Pattern(regexp = "[a-zA-Z]+", message = "Please enter valid branch code.")
     private String branch;
 
     public String getName() {

@@ -10,6 +10,8 @@ public class ErrorResponse {
 
     private LocalDateTime errorTime;
 
+    private String method;
+
     public String getErrMsg() {
         return errMsg;
     }
@@ -32,5 +34,13 @@ public class ErrorResponse {
 
     public void setErrorTime(LocalDateTime errorTime) {
         this.errorTime = errorTime;
+    }
+
+    public String getMethod() {
+        return method;
+    }
+
+    public void setMethod(String method) {
+        this.method = method;
     }
 }
