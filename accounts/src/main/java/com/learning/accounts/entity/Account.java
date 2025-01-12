@@ -1,11 +1,15 @@
 package com.learning.accounts.entity;
 
 import jakarta.persistence.*;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "Accounts")
+@EntityListeners(AuditingEntityListener.class)
 public class Account {
 
     @Id
@@ -19,9 +23,11 @@ public class Account {
     private String branch;
 
     @Column(updatable = false)
+    @CreatedDate
     private LocalDateTime createdAt;
 
     @Column(insertable = false)
+    @LastModifiedDate
     private LocalDateTime updatedAt;
 
     public int getId() {

@@ -1,13 +1,12 @@
 package com.learning.accounts.controller;
 
+import com.learning.accounts.dto.AccountRequest;
+import com.learning.accounts.dto.AccountResponse;
 import com.learning.accounts.entity.Account;
 import com.learning.accounts.repository.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,8 +15,12 @@ import java.util.Map;
 @RequestMapping("/api")
 public class AccountsController {
 
-    @Autowired
     AccountRepository accountRepository;
+
+    @Autowired
+    AccountsController(AccountRepository accountRepository){
+        this.accountRepository = accountRepository;
+    }
 
     @GetMapping("/mission")
     public Map<String, String> helloRoute(){
@@ -29,8 +32,18 @@ public class AccountsController {
 
     @GetMapping("/account/{id}")
     public ResponseEntity<Account> getAccount(@PathVariable String id){
-        System.out.println(id);
-        return ResponseEntity.status(200).body(accountRepository.findById(Integer.parseInt(id)).get());
+        if(accountRepository.findById(Integer.parseInt(id)).isPresent()) {
+            return ResponseEntity.status(200).body(accountRepository.findById(Integer.parseInt(id)).get());
+        } else {
+            throw new RuntimeException("Invalid Data. Please try again.");
+        }
+    }
+
+    @PostMapping("/account")
+    public ResponseEntity<AccountResponse> addAccount(@RequestBody AccountRequest account){
+        AccountResponse accountResponse = new AccountResponse();
+        accountResponse.fromAccount(accountRepository.save(account.toAccount()));
+        return ResponseEntity.status(200).body(accountResponse);
     }
 
 }
