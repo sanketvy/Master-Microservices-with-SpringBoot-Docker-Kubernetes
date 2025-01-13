@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="66c079f7-efca-4cad-a21f-57d1f1ebe638" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/loans/src/main/java/com/learning/loans/controller/LoanController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans/src/main/java/com/learning/loans/dto/LoanRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans/src/main/java/com/learning/loans/dto/LoanResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans/src/main/java/com/learning/loans/entity/Loan.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans/src/main/java/com/learning/loans/repository/LoanRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans/src/main/java/com/learning/loans/service/LoanService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/learning/loans/LoansApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/learning/loans/LoansApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/main/resources/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/resources/schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +89,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736695651707</updated>
-      <workItem from="1736695652755" duration="16853000" />
+      <workItem from="1736695652755" duration="18092000" />
     </task>
     <servers />
   </component>
