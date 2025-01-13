@@ -2,8 +2,15 @@ package com.learning.accounts.controller;
 
 import com.learning.accounts.dto.AccountRequest;
 import com.learning.accounts.dto.AccountResponse;
+import com.learning.accounts.dto.ErrorResponse;
 import com.learning.accounts.entity.Account;
 import com.learning.accounts.repository.AccountRepository;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.info.Info;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,6 +25,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api")
 @Validated
+@Tag(name = "Accounts Controller", description = "This controller exposes Account related MS")
 public class AccountsController {
 
     AccountRepository accountRepository;
@@ -28,6 +36,9 @@ public class AccountsController {
     }
 
     @GetMapping("/account/{id}")
+    @Operation(summary = "GET Account", description = "Fetch Account Data based on Account ID")
+    @ApiResponse(responseCode = "200")
+    @ApiResponse(responseCode = "400", description = "BAD Request", content = @Content(schema = @Schema(implementation = ErrorResponse.class)))
     public ResponseEntity<Account> getAccount(@PathVariable String id){
         if(accountRepository.findById(Integer.parseInt(id)).isPresent()) {
             return ResponseEntity.status(200).body(accountRepository.findById(Integer.parseInt(id)).get());
@@ -40,7 +51,7 @@ public class AccountsController {
     public ResponseEntity<AccountResponse> addAccount(@Valid @RequestBody AccountRequest account){
         AccountResponse accountResponse = new AccountResponse();
         accountResponse.fromAccount(accountRepository.save(account.toAccount()));
-        return ResponseEntity.status(200).body(accountResponse);
+        return ResponseEntity.status(HttpStatus.CREATED).body(accountResponse);
     }
 
     @PutMapping("/account/{id}")

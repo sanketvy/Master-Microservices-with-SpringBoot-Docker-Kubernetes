@@ -1,11 +1,14 @@
 package com.learning.accounts.dto;
 
 import com.learning.accounts.entity.Account;
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 
+
+@Schema(name = "AccountRequest", description = "Account Request DTO")
 public class AccountRequest {
 
     private String name;
