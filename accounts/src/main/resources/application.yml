@@ -14,8 +14,10 @@ spring:
     show-sql: true
   profiles:
     active: dev
+
 server:
   port: 8081
+
 
 root:
   name: Root1
