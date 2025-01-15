@@ -12,12 +12,12 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
-  profiles:
-    active: dev
+  config:
+    import: configserver:http://localhost:8071/
+    # optional denotes that the MS should start even if config server is not running.
 
 server:
   port: 8081
-
 
 root:
   name: Root1
