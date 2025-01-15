@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="66c079f7-efca-4cad-a21f-57d1f1ebe638" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/accounts/src/main/java/com/learning/accounts/controller/ConfigurationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/java/com/learning/accounts/controller/ConfigurationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/src/main/resources/application.yml" afterDir="false" />
     </list>
@@ -118,7 +119,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736695651707</updated>
-      <workItem from="1736695652755" duration="29880000" />
+      <workItem from="1736695652755" duration="31603000" />
     </task>
     <servers />
   </component>

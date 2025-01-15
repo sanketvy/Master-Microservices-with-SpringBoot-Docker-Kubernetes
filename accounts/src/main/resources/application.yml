@@ -23,3 +23,9 @@ root:
   name: Root1
   game: pubg
 
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
