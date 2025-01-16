@@ -1,0 +1,53 @@
+services:
+  rabbit:
+    image: rabbitmq:3.12-management
+    hostname: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    healthcheck:
+      test: rabbitmq-diagnostics check_port_connectivity
+      interval: 10s
+      retries: 10
+      timeout: 5s
+      start_period: 5s
+    networks:
+      - learning
+  accounts:
+    image: "accounts:latest"
+    container_name: accounts-ms
+    ports:
+      - "8081:8081"
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+    networks:
+      - learning
+    environment:
+      SPRING_CONFIG_IMPORT: "configserver:http://configserver:8071"
+      SPRING_PROFILES_ACTIVE: "default"
+      SPRING_APPLICATION_NAME: "accounts"
+    depends_on:
+      configserver:
+        condition: service_healthy
+  configserver:
+    image: "configserver:latest"
+    container_name: configserver-ms
+    ports:
+      - "8071:8071"
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+    networks:
+      - learning
+    healthcheck:
+      test: "curl --fail --silent http://localhost:8071/actuator/health/readiness | grep UP || exit 1"
+      interval: 5s
+      retries: 10
+      timeout: 5s
+      start_period: 10s
+    depends_on:
+      rabbit:
+        condition: service_healthy
