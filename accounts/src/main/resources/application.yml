@@ -2,16 +2,14 @@ spring:
   application:
     name: accounts
   datasource:
-    url: jdbc:h2:mem:testdb
-    username: sa
-    password: sa
-  h2:
-    console:
-      enabled: true
+    url: jdbc:mysql://localhost:3307/learnDB
+    username: root
+    password: root
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
+
   config:
     import: optional:configserver:http://localhost:8071/
     # optional denotes that the MS should start even if config server is not running.
@@ -20,13 +18,15 @@ spring:
     port: 5672
     username: guest
     password: guest
+  sql:
+    init:
+      mode: always
 server:
   port: 8081
 
 root:
   name: Root1
   game: pubg
-
 
 management:
   endpoints:
