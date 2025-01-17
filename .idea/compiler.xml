@@ -7,8 +7,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="config-server" />
-        <module name="loans" />
         <module name="accounts" />
+        <module name="discovery-server" />
+        <module name="loans" />
       </profile>
     </annotationProcessing>
   </component>
@@ -16,6 +17,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="accounts" options="-parameters" />
       <module name="config-server" options="-parameters" />
+      <module name="discovery-server" options="-parameters" />
       <module name="loans" options="-parameters" />
     </option>
   </component>
