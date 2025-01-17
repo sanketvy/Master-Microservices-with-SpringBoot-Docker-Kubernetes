@@ -1,5 +1,6 @@
 package com.learning.accounts.controller;
 
+import com.learning.accounts.clients.LoansClient;
 import com.learning.accounts.dto.AccountRequest;
 import com.learning.accounts.dto.AccountResponse;
 import com.learning.accounts.dto.ErrorResponse;
@@ -36,6 +37,9 @@ public class AccountsController {
     RestTemplate restTemplate;
 
     @Autowired
+    LoansClient loansClient;
+
+    @Autowired
     AccountsController(AccountRepository accountRepository, RestTemplate restTemplate){
         this.accountRepository = accountRepository;
         this.restTemplate = restTemplate;
@@ -49,7 +53,8 @@ public class AccountsController {
         if(accountRepository.findById(Integer.parseInt(id)).isPresent()) {
             AccountResponse accountResponse = new AccountResponse();
             accountResponse.fromAccount(accountRepository.findById(Integer.parseInt(id)).get());
-            List<LoanResponse> loanResponse = restTemplate.getForObject("http://localhost:8082/api/loan/account/1", List.class);
+            // List<LoanResponse> loanResponse = restTemplate.getForObject("http://loans/api/loan/account/1", List.class);
+            List<LoanResponse> loanResponse = loansClient.getLoanById(1);
             accountResponse.setLoanResponse(loanResponse);
             return ResponseEntity.status(200).body(accountResponse);
         } else {

@@ -26,6 +26,8 @@ server:
 
 # Eureka Configurations
 eureka:
+  instance:
+    preferIpAddress: true
   client:
     registerWithEureka: true
     serviceUrl:
@@ -40,3 +42,20 @@ management:
     web:
       exposure:
         include: "*"
+# Changes for /actuator/info endpoint
+  info:
+    env:
+      enabled: true
+  endpoint:
+    shutdown:
+      enabled: true
+
+endpoint:
+  shutdown:
+    enabled: true
+
+info:
+  app:
+    name: "Accounts MS"
+    description: "Accounts Micro-Services for Application"
+    version: "1.0.0"
