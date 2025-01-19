@@ -23,3 +23,17 @@ eureka:
       defaultZone: http://localhost:8061/eureka/
 server:
   port: 8082
+
+
+resilience4j:
+  retry:
+    configs:
+      default:
+        waitDuration: 1000
+        maxAttempts: 3
+        enableExponentialBackoff: true
+        exponentialBackoffMultiplier: 2
+        ignoreExceptions: # Fallback will occur, but the method will not be retried
+          - java.lang.NullPointerException
+        retryExceptions:  # Fallback will occur, and retry will occur if below exceptions happns
+          - java.lang.ArrayIndexOutOfBoundsException

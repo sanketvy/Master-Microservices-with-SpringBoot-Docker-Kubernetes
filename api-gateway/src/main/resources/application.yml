@@ -3,10 +3,18 @@ spring:
     name: apigateway
   cloud:
     gateway:
+      httpclient:
+        connectTimeout: 1000  # 1000ms== 1s, its the time required to connect to the downstream app
+        responseTimeout: 5s   # its the time required to recieve response
       discovery:
         locator:
           enabled: true
           lowerCaseServiceId: true
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      timeout: 1s
 
 
 # Eureka Configurations
