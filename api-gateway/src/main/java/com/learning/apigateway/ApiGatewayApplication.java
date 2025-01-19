@@ -22,8 +22,13 @@ public class ApiGatewayApplication {
         return routeLocatorBuilder.routes()
                 .route(p-> p
                     .path("/api/account/**")
-                    .filters(f -> f.addResponseHeader("X-Response-Time", LocalDateTime.now().toString())
-                            .addRequestHeader("X-Correlation-Id", "ABED"))
+                    .filters(f -> f.addResponseHeader("X-Response-Time",LocalDateTime.now().toString())
+                            .addRequestHeader("X-Correlation-Id", "ABED")
+                            .circuitBreaker(config -> config.setName("accountsCircuitBreaker")
+                                    .setFallbackUri("forward:/error-url")
+                            )
+
+                    )
                     .uri("lb://ACCOUNTS")
                     )
                 .route(p-> p

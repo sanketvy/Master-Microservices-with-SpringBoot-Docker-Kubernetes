@@ -9,7 +9,10 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
-
+  cloud: # For circuitbreaker
+    openfeign:
+      circuitbreaker:
+        enabled: true
   config:
     import: optional:configserver:http://localhost:8071/
     # optional denotes that the MS should start even if config server is not running.
@@ -59,3 +62,12 @@ info:
     name: "Accounts MS"
     description: "Accounts Micro-Services for Application"
     version: "1.0.0"
+
+resilience4j:
+  circuitbreaker:
+    configs:
+      default:  # Can add the name of circuit breaker for different properties
+        slidingWindowSize: 10   # No of requirests to be monitored before opening the circuit
+        failureRateThreshold: 50  # 50% of requests if fails, then circuit needs to be open
+        permittedNumberOfCallsInHalfOpenState: 2  # Periodically number of calls to pass to check
+        waitDurationInOpenState: 10000  # Time application should be in open state before going to half open state
