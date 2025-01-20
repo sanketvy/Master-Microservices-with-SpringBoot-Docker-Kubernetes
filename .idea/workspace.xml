@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="66c079f7-efca-4cad-a21f-57d1f1ebe638" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/com/learning/apigateway/ApiGatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/learning/apigateway/ApiGatewayApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/learning/loans/controller/LoanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/learning/loans/controller/LoanController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testing-demo-java/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testing-demo-java/src/main/java/com/learning/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testing-demo-java/src/test/java/com/learning/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testing-demo/src/test/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +41,9 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.AppTest.executor": "Run",
+    "JUnit.TestingDemoApplicationTests.executor": "Run",
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -52,9 +54,10 @@
     "Spring Boot.ConfigServerApplication.executor": "Run",
     "Spring Boot.DiscoveryServerApplication.executor": "Run",
     "Spring Boot.LoansApplication.executor": "Run",
+    "Spring Boot.TestingDemoApplication.executor": "Run",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "jdk.selected.JAVA_MODULE": "21",
+    "jdk.selected.JAVA_MODULE": "openjdk-23",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Sanket/OneDrive/Projects/Microservices Implementation/discovery-server",
     "node.js.detected.package.eslint": "true",
@@ -82,7 +85,37 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.DiscoveryServerApplication">
+  <component name="RunManager" selected="JUnit.AppTest">
+    <configuration name="AppTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="testing-demo-java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.learning.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.learning" />
+      <option name="MAIN_CLASS_NAME" value="com.learning.AppTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestingDemoApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="testing-demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.learning.testingdemo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.learning.testingdemo" />
+      <option name="MAIN_CLASS_NAME" value="com.learning.testingdemo.TestingDemoApplicationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AccountsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="accounts" />
@@ -119,13 +152,30 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestingDemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="testing-demo" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.learning.testingdemo.TestingDemoApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
+      <item itemvalue="JUnit.AppTest" />
+      <item itemvalue="JUnit.TestingDemoApplicationTests" />
       <item itemvalue="Spring Boot.ApiGatewayApplication" />
       <item itemvalue="Spring Boot.ConfigServerApplication" />
       <item itemvalue="Spring Boot.DiscoveryServerApplication" />
+      <item itemvalue="Spring Boot.TestingDemoApplication" />
       <item itemvalue="Spring Boot.AccountsApplication" />
       <item itemvalue="Spring Boot.LoansApplication" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.AppTest" />
+        <item itemvalue="JUnit.TestingDemoApplicationTests" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -143,11 +193,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736695651707</updated>
-      <workItem from="1736695652755" duration="61869000" />
+      <workItem from="1736695652755" duration="67457000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Microservices_Implementation$AppTest.ic" NAME="AppTest Coverage Results" MODIFIED="1737311889924" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.learning.*</FILTER>
+    </SUITE>
   </component>
 </project>

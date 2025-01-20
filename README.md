@@ -8,3 +8,4 @@ Add dependency for springdoc. The documentation will be exposed on below path - 
 ## Reactive Gateway
 
 `http://172.27.240.1:8051/actuator/gateway/routes` -> to view all the routes
+
