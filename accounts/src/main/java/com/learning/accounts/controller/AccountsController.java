@@ -14,6 +14,8 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -36,6 +38,8 @@ public class AccountsController {
 
     RestTemplate restTemplate;
 
+    Logger logger = LoggerFactory.getLogger(AccountsController.class);
+
     @Autowired
     LoansClient loansClient;
 
@@ -50,6 +54,7 @@ public class AccountsController {
     @ApiResponse(responseCode = "200")
     @ApiResponse(responseCode = "400", description = "BAD Request", content = @Content(schema = @Schema(implementation = ErrorResponse.class)))
     public ResponseEntity<AccountResponse> getAccount(@PathVariable String id){
+        logger.info("Get Route Start");
         if(accountRepository.findById(Integer.parseInt(id)).isPresent()) {
             AccountResponse accountResponse = new AccountResponse();
             accountResponse.fromAccount(accountRepository.findById(Integer.parseInt(id)).get());

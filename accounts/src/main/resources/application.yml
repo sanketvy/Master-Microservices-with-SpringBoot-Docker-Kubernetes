@@ -45,13 +45,37 @@ management:
     web:
       exposure:
         include: "*"
-# Changes for /actuator/info endpoint
-  info:
-    env:
+  health:
+    readiness-state:
+      enabled: true
+    liveness-state:
       enabled: true
   endpoint:
     shutdown:
       enabled: true
+    health:
+      probes:
+        enabled: true
+  info:
+    env:
+      enabled: true
+  metrics:
+    export:
+      prometheus:
+        tags:
+          application: accounts
+  prometheus:
+    metrics:
+      export:
+        enabled: true
+
+logging:
+  pattern:
+    level: "%5p [${spring.application.name}, %X{trace_id}, %X{span_id}]"
+  level:
+    com:
+      learning:
+        accounts: DEBUG
 
 endpoint:
   shutdown:
