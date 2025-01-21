@@ -9,20 +9,28 @@
         <module name="config-server" />
         <module name="discovery-server" />
         <module name="loans" />
+        <module name="auth-server" />
         <module name="api-gateway" />
         <module name="accounts" />
         <module name="testing-demo-java" />
         <module name="testing-demo" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Keyclockdemo" target="17" />
+      <module name="security" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Keyclockdemo" options="-parameters" />
       <module name="accounts" options="-parameters" />
       <module name="api-gateway" options="-parameters" />
+      <module name="auth-server" options="-parameters" />
       <module name="config-server" options="-parameters" />
       <module name="discovery-server" options="-parameters" />
       <module name="loans" options="-parameters" />
+      <module name="security" options="-parameters" />
       <module name="testing-demo" options="-parameters" />
     </option>
   </component>
