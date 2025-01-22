@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="66c079f7-efca-4cad-a21f-57d1f1ebe638" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/learning/authserver/AuthController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/learning/authserver/AuthResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/learning/authserver/KeycloakConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/learning/authserver/KeycloakService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/learning/authserver/KeycloakUserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/learning/authserver/UserCredentials.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/src/main/java/com/learning/accounts/dto/AccountsDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-functions/src/main/java/com/learning/springfunctions/dto/CustomerDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-functions/src/main/java/com/learning/springfunctions/functions/MessageFunctions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/src/main/java/com/learning/accounts/controller/AccountsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/java/com/learning/accounts/controller/AccountsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +22,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="Record" />
       </list>
     </option>
   </component>
@@ -57,12 +58,13 @@
     "Spring Boot.DiscoveryServerApplication.executor": "Run",
     "Spring Boot.LoansApplication.executor": "Run",
     "Spring Boot.SecurityApplication.executor": "Run",
+    "Spring Boot.SpringFunctionsApplication.executor": "Run",
     "Spring Boot.TestingDemoApplication.executor": "Run",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "jdk.selected.JAVA_MODULE": "openjdk-23",
+    "jdk.selected.JAVA_MODULE": "21",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Sanket/OneDrive/Projects/Microservices Implementation/Keyclockdemo",
+    "last_opened_file_path": "C:/Users/Sanket/OneDrive/Projects/Microservices Implementation/spring-functions",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -88,7 +90,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.AuthServerApplication">
+  <component name="RunManager" selected="Spring Boot.SpringFunctionsApplication">
     <configuration name="AppTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="testing-demo-java" />
       <extension name="coverage">
@@ -176,6 +178,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SpringFunctionsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="spring-functions" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.learning.springfunctions.SpringFunctionsApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestingDemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="testing-demo" />
@@ -187,6 +196,7 @@
     <list>
       <item itemvalue="JUnit.AppTest" />
       <item itemvalue="JUnit.TestingDemoApplicationTests" />
+      <item itemvalue="Spring Boot.SpringFunctionsApplication" />
       <item itemvalue="Spring Boot.AuthServerApplication" />
       <item itemvalue="Spring Boot.KeyclockdemoApplication" />
       <item itemvalue="Spring Boot.SecurityApplication" />
@@ -230,6 +240,9 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Microservices_Implementation$com_learning_authserver_in_auth_server.ic" NAME="com.learning.authserver in auth-server Coverage Results" MODIFIED="1737484906589" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.learning.authserver.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/Microservices_Implementation$AppTest.ic" NAME="AppTest Coverage Results" MODIFIED="1737311889924" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>com.learning.*</FILTER>
     </SUITE>

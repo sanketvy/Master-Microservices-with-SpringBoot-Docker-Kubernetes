@@ -1,10 +1,7 @@
 package com.learning.accounts.controller;
 
 import com.learning.accounts.clients.LoansClient;
-import com.learning.accounts.dto.AccountRequest;
-import com.learning.accounts.dto.AccountResponse;
-import com.learning.accounts.dto.ErrorResponse;
-import com.learning.accounts.dto.LoanResponse;
+import com.learning.accounts.dto.*;
 import com.learning.accounts.entity.Account;
 import com.learning.accounts.repository.AccountRepository;
 import io.swagger.v3.oas.annotations.Operation;
@@ -17,6 +14,7 @@ import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.stream.function.StreamBridge;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -42,6 +40,9 @@ public class AccountsController {
 
     @Autowired
     LoansClient loansClient;
+
+    @Autowired
+    StreamBridge streamBridge;
 
     @Autowired
     AccountsController(AccountRepository accountRepository, RestTemplate restTemplate){
@@ -71,7 +72,14 @@ public class AccountsController {
     public ResponseEntity<AccountResponse> addAccount(@Valid @RequestBody AccountRequest account){
         AccountResponse accountResponse = new AccountResponse();
         accountResponse.fromAccount(accountRepository.save(account.toAccount()));
+        sendCommunication(accountResponse);
         return ResponseEntity.status(HttpStatus.CREATED).body(accountResponse);
+    }
+
+    private void sendCommunication(AccountResponse accountResponse){
+        AccountsDto accountsMsgDto = new AccountsDto(accountResponse.getName(), accountResponse.getEmail());
+        var result = streamBridge.send("sendCommunication-out-0",accountsMsgDto);
+        System.out.println(result);
     }
 
     @PutMapping("/account/{id}")
