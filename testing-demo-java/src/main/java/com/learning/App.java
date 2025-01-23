@@ -14,4 +14,8 @@ public class App
     public int additionMethod(int a, int b){
         return a+b;
     }
+
+    public int throwException(){
+        throw new ArithmeticException();
+    }
 }

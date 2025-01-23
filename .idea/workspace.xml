@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="66c079f7-efca-4cad-a21f-57d1f1ebe638" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/accounts/src/main/java/com/learning/accounts/dto/AccountsDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-functions/src/main/java/com/learning/springfunctions/dto/CustomerDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-functions/src/main/java/com/learning/springfunctions/functions/MessageFunctions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/src/main/java/com/learning/accounts/controller/AccountsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/java/com/learning/accounts/controller/AccountsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing-demo-java/src/main/java/com/learning/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/testing-demo-java/src/main/java/com/learning/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing-demo-java/src/test/java/com/learning/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/testing-demo-java/src/test/java/com/learning/AppTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +39,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "JUnit.AppTest.executor": "Debug",
+    "JUnit.AppTest.executor": "Run",
     "JUnit.TestingDemoApplicationTests.executor": "Run",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
@@ -90,7 +86,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.SpringFunctionsApplication">
+  <component name="RunManager" selected="JUnit.AppTest">
     <configuration name="AppTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="testing-demo-java" />
       <extension name="coverage">
