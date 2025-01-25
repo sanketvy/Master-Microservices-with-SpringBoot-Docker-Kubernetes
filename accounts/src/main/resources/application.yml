@@ -14,9 +14,15 @@ spring:
       circuitbreaker:
         enabled: true
     stream:
+      defaultBinder: kafka
       bindings:
         sendCommunication-out-0:
           destination: send-communication
+          binder: kafka
+      kafka:
+        binder:
+          brokers:
+            - localhost:9092
   config:
     import: optional:configserver:http://localhost:8071/
     # optional denotes that the MS should start even if config server is not running.

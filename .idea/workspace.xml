@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="66c079f7-efca-4cad-a21f-57d1f1ebe638" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/testing-demo-java/src/main/java/com/learning/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/testing-demo-java/src/main/java/com/learning/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testing-demo-java/src/test/java/com/learning/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/testing-demo-java/src/test/java/com/learning/AppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-functions/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-functions/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-functions/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-functions/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +72,7 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
