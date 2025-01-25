@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="66c079f7-efca-4cad-a21f-57d1f1ebe638" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/infra/kubernetes/env.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infra/kubernetes/server.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing-demo-java/src/test/java/com/learning/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/testing-demo-java/src/test/java/com/learning/AppTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -232,6 +231,7 @@
       <workItem from="1737392577348" duration="12578000" />
       <workItem from="1737480104652" duration="4547000" />
       <workItem from="1737790753641" duration="4021000" />
+      <workItem from="1737825552281" duration="298000" />
     </task>
     <servers />
   </component>
