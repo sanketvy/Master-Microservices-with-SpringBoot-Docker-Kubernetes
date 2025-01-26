@@ -32,6 +32,7 @@ class EmployeeServiceImplTest {
 
         BDDMockito.given(employeeRepository.save(employee)).willReturn(employee);
 
+        BDDMockito.willDoNothing().given(employeeRepository).deleteById(1L);
         Employee newEmployee = employeeService.saveEmployee(employee);
         assertNotNull(newEmployee, "Object is Null");
 

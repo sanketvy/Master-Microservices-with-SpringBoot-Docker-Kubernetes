@@ -2,13 +2,16 @@ package com.learning.mocktesting.service;
 
 import com.learning.mocktesting.models.Employee;
 import com.learning.mocktesting.repository.EmployeeRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class EmployeeServiceImpl implements EmployeeService{
 
-    @Autowired
     EmployeeRepository employeeRepository;
 
+    EmployeeServiceImpl(EmployeeRepository employeeRepository){
+        this.employeeRepository =employeeRepository;
+    }
     @Override
     public Employee saveEmployee(Employee employee) {
 
