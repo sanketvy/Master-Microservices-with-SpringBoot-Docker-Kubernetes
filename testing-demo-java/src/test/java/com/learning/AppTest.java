@@ -11,6 +11,8 @@ import org.junit.jupiter.params.provider.MethodSource;
 import java.util.stream.Stream;
 
 @DisplayName("App Class Tests")
+@TestMethodOrder(MethodOrderer.Random.class)
+@TestInstance(TestInstance.Lifecycle.PER_METHOD)
 class AppTest {
 
     @DisplayName("Addition of 3+2")
@@ -30,9 +32,8 @@ class AppTest {
         );
     }
 
-    @Test
     @DisplayName("Addition of -3+10")
-    @Disabled
+    @RepeatedTest(5)
     void additionOf_Negative3_Positive10(){
         App myApp = new App();
         int result = myApp.additionMethod(-3, 10);

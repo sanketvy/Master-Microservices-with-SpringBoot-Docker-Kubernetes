@@ -14,12 +14,21 @@
         <module name="accounts" />
         <module name="testing-demo-java" />
         <module name="spring-functions" />
-        <module name="testing-demo" />
+      </profile>
+      <profile name="Annotation profile for mock-testing" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
+        </processorPath>
+        <module name="mock-testing" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Keyclockdemo" target="17" />
       <module name="security" target="17" />
+      <module name="testing-demo" target="21" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -31,6 +40,7 @@
       <module name="config-server" options="-parameters" />
       <module name="discovery-server" options="-parameters" />
       <module name="loans" options="-parameters" />
+      <module name="mock-testing" options="-parameters" />
       <module name="security" options="-parameters" />
       <module name="spring-functions" options="-parameters" />
       <module name="testing-demo" options="-parameters" />

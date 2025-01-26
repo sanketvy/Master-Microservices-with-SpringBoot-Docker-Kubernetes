@@ -15,11 +15,13 @@
         <option value="$PROJECT_DIR$/Keyclockdemo/pom.xml" />
         <option value="$PROJECT_DIR$/auth-server/pom.xml" />
         <option value="$PROJECT_DIR$/spring-functions/pom.xml" />
+        <option value="$PROJECT_DIR$/mock-testing/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/Keyclockdemo/pom.xml" />
+        <option value="$PROJECT_DIR$/testing-demo/pom.xml" />
       </set>
     </option>
   </component>
